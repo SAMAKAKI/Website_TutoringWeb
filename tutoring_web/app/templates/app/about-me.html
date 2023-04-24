@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% load static %}
+    {% block title %}O Mnie{% endblock %}
+    {% block main-content %}
+        <h1 class="text-center fw-bold my-5"><i class="fa-solid fa-clipboard me-3 text-primary"></i>O Mnie</h1>
+        <div class="d-flex justify-content-center align-items-center p-5 my-5">
+            <img src="{% static 'app/images/time_is_money.png' %}" alt="Time is money" class="rounded-5 img-animate custom-size">
+            <div class="text-center w-50 ms-5">
+                <h2 class="mb-3">Kim w ogóle jestem?</h2>
+                <p class="fs-4">Nazywam się Nikita pochodzę z Ukrainy. Mam 17 lat. Mieszkam w Polsce już więcej niż 5 lat. Uczę się na technika programista. Mam doświadczenie z programowaniem już 3 lata</p>
+            </div>
+        </div>
+        <hr class="w-75 mx-auto">
+        <div class="d-flex justify-content-center align-items-center p-5 my-5">
+            <div class="text-center w-50 me-5">
+                <h2 class="mb-3">Kwalifikacja zawodowa</h2>
+                <p class="fs-4">Otrzymałem certyfikat kwalifikacji zawodowej INF.03. Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych. Zdałem na 94%</p>
+            </div>
+            <img src="{% static 'app/images/certyfikat.png' %}" alt="My certificate" class="rounded-5 img-animate custom-size">
+        </div>
+        <hr class="w-75 mx-auto">
+    {% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% load static %}
+    {% block title %}Informacje Dodatkowe{% endblock %}
+    {% block main-content %}
+        <h1 class="text-center fw-bold my-5"><i class="fa-solid fa-circle-info me-3 text-primary"></i>Informacje Dodatkowe</h1>
+        <div class="d-flex justify-content-center align-items-center p-5 my-5">
+            <img src="{% static 'app/images/time_is_money.png' %}" alt="Time is money" class="rounded-5 img-animate custom-size">
+            <div class="text-center w-50 ms-5">
+                <h2 class="mb-3">Ile kosztuje i ile trwa zajęcie?</h2>
+                <p class="fs-4">Jedno zajęcie kosztuje 40 złoty za jedno dziecko. Jest to dojść mała cena dla zajęcia, które trwa <strong>2</strong> godziny. Są także do danego zajęcia dołączona prezentacja/plik formatu pdf, w którym jest streszczenie danego zajęcia i zadanie domowe polegające na treści zajęcia</p>
+            </div>
+        </div>
+        <hr class="w-75 mx-auto">
+        <div class="d-flex justify-content-center align-items-center p-5 my-5">
+            <div class="text-center w-50 me-5">
+                <h2 class="mb-3">Co robić jeżeli moich/jego dzieci/ka nie było na zajęciu?</h2>
+                <p class="fs-4">Nie musisz/cie się martwić o tym bo jest dołączona prezentacja/plik formatu pdf, którą/y dziecko może otworzyć i przeczytać jeżeli go nie było lub powtórzyć materiał</p>
+            </div>
+            <img src="{% static 'app/images/presentation.jpg' %}" alt="Presentation" class="rounded-5 img-animate custom-size w-50">
+        </div>
+        <hr class="w-75 mx-auto">
+        <div class="d-flex justify-content-center align-items-center p-5 my-5">
+            <img src="{% static 'app/images/Face-to-face.png' %}" alt="Presentation" class="rounded-5 img-animate custom-size w-50">
+            <div class="text-center w-50 ms-5">
+                <h2 class="mb-3">Co robić jeżeli moje dzieci/ko nie zrozumieli/miało materiał?</h2>
+                <p class="fs-4">Jest szybka odpowiedź na to pytanie. Na początku każdego zajęcia jest przypomnienie poprzedniego zajęcia jednak jeżeli dziecko całkowicie nie rozumieło materiał jest inny rodzaj zajęć dodatkowych. Są to zajęcia 1 godzinowe ale już tylko jedno dziecko w grupie i koszt tego zajęcia stanowi 50 zł</p>
+            </div>
+        </div>
+    {% endblock %}

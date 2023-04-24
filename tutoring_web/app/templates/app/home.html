@@ -1,4 +1,47 @@
 {% extends 'app/base.html' %}
 {% load static %}
     {% block title %}Home{% endblock %}
+    {% block main-content %}
+        <div class="text-center my-5">
+            <img src="{% static 'app/images/logo.png' %}" alt="SAMAKAKI" class="logo-animate" width="400" height="auto">
+            <h1 class="fw-bold mt-4 w-50 mx-auto">To jest nowy serwis zajęć dodatkowych z programowania!</h1>
+            <div class="d-flex flex-nowrap justify-content-around my-5 align-items-center p-5">
+                <img src="{% static 'app/images/code.jpg' %}" alt="Code" class="w-50 rounded-5 me-5 img-animate">
+                <p class="fs-4 w-50 mx-auto">Jeżeli chesz/cie żeby twoje/wasze dziecko/ci nauczyło/li się programować różne aplikacje webowe (strony internetowe), aplikacje mobilne lub dekstopowe albo znałazła sobie pasję/hobby w życiu, to ta strona jest jak najbardziej dla dziecka/dzieci. Są to dodatkowe zajęcia dla dziecka/ci 10 letniego/ch i powyżej.</p>
+            </div>
+            <hr class="w-75 mx-auto">
+            <h2 class="pt-5">Co to za zajęcia i czego się nauczy/ą dziecko/ci?</h2>
+            <div class="d-flex flex-nowrap justify-content-around my-5 align-items-center p-5">
+                <p class="fs-4 w-50 mx-auto">Są to najbardziej zadawane pytania. Ale odpowiedź jest krótka, są to dodatkowe zajęcia, które są w grupach, grupa składa się z 6 osób (5 uczniów i mnie). Jeżeli chcesz/cie poznać mnie lepiej to zapraszam <a href="{% url 'about-me' %}" class="block-warning">tutaj</a>. Teraz szybko o tym czego nauczy/ą się dziecko/ci, są to 5 języków programowania: Python, HTML, CSS, SQL, JavaScript.</p>
+                <img src="{% static 'app/images/programing_in_group.jpg' %}" alt="Code" class="w-50 rounded-5 ms-5 img-animate">
+            </div>
+            <hr class="w-75 mx-auto">
+            <h2 class="pt-5">Języki programowania, co do czego?</h2>
+            <p class="my-5 fs-4 w-75 mx-auto">Jeżeli jeszcze nie zwróciłeś/aś / zwróciliście swoją uwagę na te języki albo jeżeli nie znasz/cie ich to już tłumaczę. Są to języki zwłaszcza dla aplikacji webowych ale teraz masz/cie pytanie dlaczego tylko dla robienia stron internetowych jeżeli na początku powiedziałem, że nauczę jeszcze robienie aplikacji mobilnych i dekstopowych. Już mówię, ja nauczę głównego języka z tych wszystkich języków czyli Python. Ja dam główną wiedzę żeby dziecko/ci jeżeli nie chce/ą uczyć się robienia stron internetowych to chociaż miało/miały już wiedzę do uczenia się samemu/samym tego co chce/ą! Jednak jeżeli zainteresowałem to dla ogólnej wiedzy dzielimy te języki na dwa typy Back-end'owe i Front-end'owe.</p>
+        </div>
+        <div class="d-flex flex-nowrap justify-content-around mx-auto align-items-top my-5">
+            <div class="back-end">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="{% static 'app/images/back-end.png' %}" alt="Back-End" width="100" height="auto">
+                    <h3 class="fw-bold ms-4">Back-End</h3>
+                </div>
+                <img src="{% static 'app/images/code-back-end.png' %}" alt="Screenshot back-end code" width="auto" height="400" class="rounded-5 my-5 img-animate">
+            </div>
+            <div class="front-end">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="{% static 'app/images/front-end.png' %}" alt="Front-End" width="100" height="auto">
+                    <h3 class="fw-bold ms-4">Front-End</h3>
+                </div>
+                <img src="{% static 'app/images/code-front-end.png' %}" alt="Screenshot front-end code" width="auto" height="400" class="rounded-5 my-5 img-animate">
+            </div>
+        </div>
+        <hr class="w-75 mx-auto">
+        <div class="text-center">
+            <h2 class="pt-5">Jaka jest cena? Co zrobić żeby dołączyć do zajęć? ...</h2>
+            <div class="d-flex flex-nowrap justify-content-around align-items-center p-5">
+                <img src="{% static 'app/images/more-info.png' %}" alt="More information" class="w-50 me-5 img-animate">
+                <p class="fs-4 w-50 mx-auto">Jeżeli zainteresowało i chcesz/cie dowiedzieć się o cenie, jak dołączyć albo o różnych innych informacjach to kliknij/cie <a href="{% url 'additional-info' %}" class="block-warning">tutaj</a>.</p>
+            </div>
+        </div>
+    {% endblock %}
     
