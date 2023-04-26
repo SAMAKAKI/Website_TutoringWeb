@@ -19,4 +19,20 @@
             <img src="{% static 'app/images/certyfikat.png' %}" alt="My certificate" class="rounded-5 img-animate custom-size">
         </div>
         <hr class="w-75 mx-auto">
+        <div class="d-flex justify-content-center align-items-center p-5 my-5">
+            <img src="{% static 'app/images/portfolio.jpg' %}" alt="Portfolio" class="rounded-5 img-animate w-50">
+            <div class="text-center w-50 ms-5">
+                <h2 class="mb-3">Portfolio</h2>
+                <p class="fs-4">Żeby udowodnić, że naprawdę umiem programować i mogę uczyć dzieci, mam swoje portfolio, które ma w sobie różne programy ale większość programów jest to strony internetowe. Skupiałem się bardziej na back-end'zie lecz też mam pracy związane z front-end'em</p>
+                <a href="https://github.com/SAMAKAKI?tab=repositories" target="_blank" class="btn btn-primary mt-3">Wszystkie pracy</a>
+            </div>
+        </div>
+        <hr class="w-75 mx-auto">
+        <div class="d-flex justify-content-center align-items-center p-5 my-5">
+            <div class="text-center w-50 me-5">
+                <h2 class="mb-3">Kontakt ze mną</h2>
+                <p class="fs-4">Można ze mną się skontaktować przez Messenger, Telegram, Instagram, WhatsApp i Email. Szczegóły można się dowiedzieć <a href="{% url 'about-me' %}" class="block-warning">tutaj</a></p>
+            </div>
+            <img src="{% static 'app/images/certyfikat.png' %}" alt="My certificate" class="rounded-5 img-animate custom-size">
+        </div>
     {% endblock %}
