@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+{% load static %}
+    {% block title %}Kontakty{% endblock %}
+    {% block main-content %}
+        <h1 class="text-center fw-bold my-5"><i class="fa-solid fa-address-card me-3 text-primary"></i>Kontakty</h1>
+        <div class="d-flex justify-content-around align-items-center pt-5">
+            <div class="card" style="width: 18%;">
+                <img src="{% static 'app/images/messenger.png' %}" class="card-img-top" alt="Messenger">
+                <div class="card-body text-center">
+                    <h4>Messenger</h4>
+                    <p class="card-text my-3">Nikita Shorychev</p>
+                    <a href="https://www.facebook.com/NIKITOS.SHORICHEV2006/" class="btn btn-primary">Napisz</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18%;">
+                <img src="{% static 'app/images/instagram.png' %}" class="card-img-top" alt="Instagram">
+                <div class="card-body text-center">
+                    <h4>Instagram</h4>
+                    <p class="card-text my-3">nikitashorichev</p>
+                    <a href="https://www.instagram.com/nikitashorichev/" class="btn btn-primary">Napisz</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18%;">
+                <img src="{% static 'app/images/telegram.png' %}" class="card-img-top" alt="Telegram">
+                <div class="card-body text-center">
+                    <h4>Telegram</h4>
+                    <p class="card-text my-3">@nikitosicheck</p>
+                    <a href="https://t.me/nikitosicheck" class="btn btn-primary">Napisz</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-around align-items-center mt-5">
+            <div class="card" style="width: 18%;">
+                <img src="{% static 'app/images/whatsapp.png' %}" class="card-img-top" alt="WhatsApp">
+                <div class="card-body text-center">
+                    <h4>Whats App</h4>
+                    <p class="card-text my-3">Nikita Shorychev</p>
+                    <a href="https://www.facebook.com/NIKITOS.SHORICHEV2006/" class="btn btn-primary">Napisz</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18%;">
+                <img src="{% static 'app/images/instagram.png' %}" class="card-img-top" alt="Instagram">
+                <div class="card-body text-center">
+                    <h4>Instagram</h4>
+                    <p class="card-text my-3">nikitashorichev</p>
+                    <a href="https://www.instagram.com/nikitashorichev/" class="btn btn-primary">Napisz</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

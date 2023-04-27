@@ -12,3 +12,7 @@ class AdditionalInfoView(View):
 class AboutMeView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'app/about-me.html', locals())
+
+class ContactMeView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'app/contact-me.html', locals())
