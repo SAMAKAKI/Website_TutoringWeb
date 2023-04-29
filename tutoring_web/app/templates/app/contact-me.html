@@ -3,48 +3,24 @@
     {% block title %}Kontakty{% endblock %}
     {% block main-content %}
         <h1 class="text-center fw-bold my-5"><i class="fa-solid fa-address-card me-3 text-primary"></i>Kontakty</h1>
-        <div class="d-flex justify-content-around align-items-center pt-5">
-            <div class="card" style="width: 18%;">
-                <img src="{% static 'app/images/messenger.png' %}" class="card-img-top" alt="Messenger">
-                <div class="card-body text-center">
-                    <h4>Messenger</h4>
-                    <p class="card-text my-3">Nikita Shorychev</p>
-                    <a href="https://www.facebook.com/NIKITOS.SHORICHEV2006/" class="btn btn-primary">Napisz</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18%;">
-                <img src="{% static 'app/images/instagram.png' %}" class="card-img-top" alt="Instagram">
-                <div class="card-body text-center">
-                    <h4>Instagram</h4>
-                    <p class="card-text my-3">nikitashorichev</p>
-                    <a href="https://www.instagram.com/nikitashorichev/" class="btn btn-primary">Napisz</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18%;">
-                <img src="{% static 'app/images/telegram.png' %}" class="card-img-top" alt="Telegram">
-                <div class="card-body text-center">
-                    <h4>Telegram</h4>
-                    <p class="card-text my-3">@nikitosicheck</p>
-                    <a href="https://t.me/nikitosicheck" class="btn btn-primary">Napisz</a>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-around align-items-center mt-5">
-            <div class="card" style="width: 18%;">
-                <img src="{% static 'app/images/whatsapp.png' %}" class="card-img-top" alt="WhatsApp">
-                <div class="card-body text-center">
-                    <h4>Whats App</h4>
-                    <p class="card-text my-3">Nikita Shorychev</p>
-                    <a href="https://www.facebook.com/NIKITOS.SHORICHEV2006/" class="btn btn-primary">Napisz</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18%;">
-                <img src="{% static 'app/images/instagram.png' %}" class="card-img-top" alt="Instagram">
-                <div class="card-body text-center">
-                    <h4>Instagram</h4>
-                    <p class="card-text my-3">nikitashorichev</p>
-                    <a href="https://www.instagram.com/nikitashorichev/" class="btn btn-primary">Napisz</a>
-                </div>
+        <p class="text-center fs-4 w-50 mx-auto">Jeżeli chcesz skontaktować się ze mną, to masz tutaj wiele opcji do wyboru. Rozpoczynając od bardzo znanego tobie Messenger'a do mniej znanego Telegram'a</p>
+        <div class="container mt-5 mx-auto">
+            <div class="d-flex justify-content-between align-items-center text-center">
+                <a href="https://www.facebook.com/NIKITOS.SHORICHEV2006/" target="_blank">
+                    <img src="{% static 'app/images/messenger.png' %}" alt="Messenger" class="w-50 img-animate">
+                </a>
+                <a href="https://www.instagram.com/nikitashorichev/" target="_blank">
+                    <img src="{% static 'app/images/instagram.png' %}" alt="Instagram" class="w-50 img-animate">
+                </a>
+                <a href="https://discordapp.com/users/368771708523380738" target="_blank">
+                    <img src="{% static 'app/images/discord.png' %}" alt="Discord" class="w-50 img-animate">
+                </a>
+                <a href="mailto: nikitos.shorick@gmail.com" target="_blank">
+                    <img src="{% static 'app/images/gmail.png' %}" alt="Gmail" class="w-50 img-animate">
+                </a>
+                <a href="https://t.me/nikitosicheck" target="_blank">
+                    <img src="{% static 'app/images/telegram.png' %}" alt="Telegram" class="w-50 img-animate">
+                </a>
             </div>
         </div>
     {% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'app/base.html' %}
+{% load static %}
+    {% block title %}Opinie{% endblock %}
+    {% block main-content %}
+        <h1 class="text-center fw-bold my-5"><i class="fa-solid fa-star me-3 text-primary"></i>Opinie</h1>
+        <div class="container mx-auto overflow-auto mb-2" style="height: 75%">
+            {% if opinions %}
+                {% for item in opinions %}
+                    {% if item.opinion|length > 20 %}
+                        <div class="rounded-4 shadow bg-light w-50 my-4 ms-3 p-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <h5 class="text-start me-5">{{ item.user.username }}</h5>
+                                <h5>{{ item.mark }}</h5>
+                            </div>
+                            <div>
+                                <p class="fs-5">{{ item.opinion}}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                    <div class="rounded-4 shadow bg-light w-25 my-4 ms-3 p-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <h5 class="text-start me-5">{{ item.user.username }}</h5>
+                            <h5>{{ item.mark }}</h5>
+                        </div>
+                        <div>
+                            <p class="fs-5">{{ item.opinion}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div>
+                    <h2 class="text-center fw-bold">Nikt jeszcze nie ocenił tej strony</h2>
+                </div>
+            {% endif %}
+        </div>
+        <div class="container mx-auto " style="height: 7.5%;">
+            <form method="post" id="reviews">
+                {% csrf_token %}
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="marks fs-4 d-flex flex-row-reverse">
+                        <input type="radio" name="star" id="star-5" class="d-none star" value="star-5" checked>
+                        <label for="star-5" class="label-star"><i class="fa-regular fa-star"></i></label>
+                        <input type="radio" name="star" id="star-4" class="d-none star" value="star-4">
+                        <label for="star-4" class="label-star"><i class="fa-regular fa-star"></i></label>
+                        <input type="radio" name="star" id="star-3" class="d-none star" value="star-3">
+                        <label for="star-3" class="label-star"><i class="fa-regular fa-star"></i></label>
+                        <input type="radio" name="star" id="star-2" class="d-none star" value="star-2">
+                        <label for="star-2" class="label-star"><i class="fa-regular fa-star"></i></label>
+                        <input type="radio" name="star" id="star-1" class="d-none star" value="star-1">
+                        <label for="star-1" class="label-star"><i class="fa-regular fa-star"></i></label>
+                    </div>
+                    <div class="form-floating" style="width: 75%;">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="resize: none;"></textarea>
+                        <label for="floatingTextarea">Napisz swoją opinie o zajęciach</label>
+                      </div>
+                    <div class="send">
+                        <button type="submit" class="btn">
+                            <img src="{% static 'app/images/send.png' %}" alt="Send" width="40" class="img-animate">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    {% endblock %}

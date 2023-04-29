@@ -48,3 +48,12 @@
     height: auto;
     width: 32%;
 }
+.star:checked,
+.star:checked ~ label{
+    color: #ffc107;
+}
+.label-star:hover,
+.label-star:hover ~ .label-star,
+.label-star:checked ~ .label-star:hover{
+    color: #ffc107;
+}
