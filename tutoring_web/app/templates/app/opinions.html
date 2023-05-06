@@ -2,56 +2,92 @@
 {% load static %}
     {% block title %}Opinie{% endblock %}
     {% block main-content %}
-        <h1 class="text-center fw-bold my-5"><i class="fa-solid fa-star me-3 text-primary"></i>Opinie</h1>
+        <h1 class="text-center fw-bold my-5"><i class="fa-solid fa-star me-3 text-primary"></i>Opinie &nbsp; {{ website_mark|floatformat }} <i class="fa-regular fa-star text-warning"></i></h1>
         <div class="container mx-auto overflow-auto mb-2" style="height: 75%">
-            {% if opinions %}
-                {% for item in opinions %}
-                    {% if item.opinion|length > 20 %}
-                        <div class="rounded-4 shadow bg-light w-50 my-4 ms-3 p-3">
-                            <div class="d-flex align-items-center mb-2">
-                                <h5 class="text-start me-5">{{ item.user.username }}</h5>
-                                <h5>{{ item.mark }}</h5>
-                            </div>
-                            <div>
-                                <p class="fs-5">{{ item.opinion}}</p>
-                            </div>
+            {% for item in opinions %}
+                {% if item.opinion|length > 30 %}
+                    <div class="rounded-4 shadow bg-light w-50 my-4 ms-3 p-3">
+                        <div class="d-flex align-content-center mb-2">
+                            <h5 class="text-start me-5">{# item.user.image #}{{ item.user.username }}</h5>
+                            {% if item.mark == 5 %}
+                                {% for i in '55555' %}
+                                    <i class="fa-regular fa-star text-warning"></i>
+                                {% endfor %}
+                            {% elif item.mark == 4 %}
+                                {% for i in '4444' %}
+                                    <i class="fa-regular fa-star text-warning"></i>
+                                {% endfor %}
+                            {% elif item.mark == 3 %}
+                                {% for i in '333' %}
+                                    <i class="fa-regular fa-star text-warning"></i>
+                                {% endfor %}
+                            {% elif item.mark == 2 %}
+                                {% for i in '22' %}
+                                    <i class="fa-regular fa-star text-warning"></i>
+                                {% endfor %}
+                            {% elif item.mark == 1 %}
+                                {% for i in '1' %}
+                                    <i class="fa-regular fa-star text-warning"></i>
+                                {% endfor %}
+                            {% endif %}
                         </div>
-                    {% else %}
-                    <div class="rounded-4 shadow bg-light w-25 my-4 ms-3 p-3">
-                        <div class="d-flex align-items-center mb-2">
-                            <h5 class="text-start me-5">{{ item.user.username }}</h5>
-                            <h5>{{ item.mark }}</h5>
-                        </div>
-                        <div>
-                            <p class="fs-5">{{ item.opinion}}</p>
-                        </div>
+                        <p class="fs-5">{{ item.opinion}}</p>
+                        <p>{{ item.date_created }}</p>
                     </div>
-                    {% endif %}
-                {% endfor %}
-            {% else %}
+                {% else %}
+                <div class="rounded-4 shadow bg-light w-25 my-4 ms-3 p-3">
+                    <div class="d-flex align-content-center mb-2">
+                        <h5 class="text-start me-5">{# item.user.image #}{{ item.user.username }}</h5>
+                        {% if item.mark == 5 %}
+                            {% for i in '55555' %}
+                                <i class="fa-regular fa-star text-warning"></i>
+                            {% endfor %}
+                        {% elif item.mark == 4 %}
+                            {% for i in '4444' %}
+                                <i class="fa-regular fa-star text-warning"></i>
+                            {% endfor %}
+                        {% elif item.mark == 3 %}
+                            {% for i in '333' %}
+                                <i class="fa-regular fa-star text-warning"></i>
+                            {% endfor %}
+                        {% elif item.mark == 2 %}
+                            {% for i in '22' %}
+                                <i class="fa-regular fa-star text-warning"></i>
+                            {% endfor %}
+                        {% elif item.mark == 1 %}
+                            {% for i in '1' %}
+                                <i class="fa-regular fa-star text-warning"></i>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <p class="fs-5">{{ item.opinion}}</p>
+                    <p>{{ item.date_created }}</p>
+                </div>
+                {% endif %}
+            {% empty %}
                 <div>
                     <h2 class="text-center fw-bold">Nikt jeszcze nie ocenił tej strony</h2>
                 </div>
-            {% endif %}
+            {% endfor %}
         </div>
         <div class="container mx-auto " style="height: 7.5%;">
             <form method="post" id="reviews">
                 {% csrf_token %}
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="marks fs-4 d-flex flex-row-reverse">
-                        <input type="radio" name="star" id="star-5" class="d-none star" value="star-5" checked>
+                        <input type="radio" name="star" id="star-5" class="d-none star" value="5" checked>
                         <label for="star-5" class="label-star"><i class="fa-regular fa-star"></i></label>
-                        <input type="radio" name="star" id="star-4" class="d-none star" value="star-4">
+                        <input type="radio" name="star" id="star-4" class="d-none star" value="4">
                         <label for="star-4" class="label-star"><i class="fa-regular fa-star"></i></label>
-                        <input type="radio" name="star" id="star-3" class="d-none star" value="star-3">
+                        <input type="radio" name="star" id="star-3" class="d-none star" value="3">
                         <label for="star-3" class="label-star"><i class="fa-regular fa-star"></i></label>
-                        <input type="radio" name="star" id="star-2" class="d-none star" value="star-2">
+                        <input type="radio" name="star" id="star-2" class="d-none star" value="2">
                         <label for="star-2" class="label-star"><i class="fa-regular fa-star"></i></label>
-                        <input type="radio" name="star" id="star-1" class="d-none star" value="star-1">
+                        <input type="radio" name="star" id="star-1" class="d-none star" value="1">
                         <label for="star-1" class="label-star"><i class="fa-regular fa-star"></i></label>
                     </div>
                     <div class="form-floating" style="width: 75%;">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="resize: none;"></textarea>
+                        <textarea name="text-opinion" class="form-control resize" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                         <label for="floatingTextarea">Napisz swoją opinie o zajęciach</label>
                       </div>
                     <div class="send">
@@ -61,5 +97,8 @@
                     </div>
                 </div>
             </form>
+            {% if error %}
+                <h3 class="error-opinion text-danger">{{ error }}</h3>
+            {% endif %}  
         </div>
     {% endblock %}
